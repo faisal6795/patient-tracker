@@ -43,14 +43,14 @@ export default function Page() {
   const addNewPatient = () => {
     const newPatient = {
       id: getUniqueID(),
-      name: "faisal",
-      phone: "8976513089",
-      age: 32,
-      systemic: "hahaha",
-      examination: "kgvghfghgj",
+      name: "",
+      phone: "",
+      age: "",
+      systemic: "",
+      examination: "",
       scaling: "Not done",
-      followUpDate: "2024-11-21",
-      treatmentRequired: "afajfkhaf",
+      followUpDate: "",
+      treatmentRequired: "",
       treatmentDone: false,
     };
     setCurrentPatient(newPatient);
