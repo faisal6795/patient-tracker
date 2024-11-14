@@ -4,7 +4,7 @@ const Radio = ({ options, checkedValue, onChange, label }) => {
   return (
     <div className="relative">
       <p className="text-purple-600 mb-2 text-sm font-medium">{label}</p>
-      <div class="relative flex items-center rounded-lg text-white border-2 border-purple-600 w-full overflow-hidden">
+      <div className="relative flex items-center rounded-lg text-white border-2 border-purple-600 w-full overflow-hidden">
         {options.map((value, index) => (
           <div
             key={index}
