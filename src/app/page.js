@@ -94,14 +94,18 @@ export default function Page() {
             <h2 className="text-xl font-semibold text-pink-500">
               Treatment Pending
             </h2>
-            {notDonePatients.map((patient) => (
-              <PatientCard
-                key={patient.id}
-                patient={patient}
-                onEdit={() => editPatient(patient)}
-                onCall={() => callPatient(patient.phone)}
-              />
-            ))}
+            {notDonePatients
+              .sort(
+                (a, b) => new Date(a.followUpDate) - new Date(b.followUpDate)
+              )
+              .map((patient) => (
+                <PatientCard
+                  key={patient.id}
+                  patient={patient}
+                  onEdit={() => editPatient(patient)}
+                  onCall={() => callPatient(patient.phone)}
+                />
+              ))}
           </motion.div>
         )}
         {donePatients.length > 0 && (
@@ -114,14 +118,18 @@ export default function Page() {
             <h2 className="text-xl font-semibold mt-10 text-pink-500">
               Treatment Done
             </h2>
-            {donePatients.map((patient) => (
-              <PatientCard
-                key={patient.id}
-                patient={patient}
-                onEdit={() => editPatient(patient)}
-                onCall={() => callPatient(patient.phone)}
-              />
-            ))}
+            {donePatients
+              .sort(
+                (a, b) => new Date(a.followUpDate) - new Date(b.followUpDate)
+              )
+              .map((patient) => (
+                <PatientCard
+                  key={patient.id}
+                  patient={patient}
+                  onEdit={() => editPatient(patient)}
+                  onCall={() => callPatient(patient.phone)}
+                />
+              ))}
           </motion.div>
         )}
       </AnimatePresence>
